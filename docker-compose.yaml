@@ -1,0 +1,16 @@
+# Установка версии
+version: "3.8"
+
+services:
+  fastapi:
+    # Сборка и объявление хоста
+    build:
+    context: .
+    network: host
+  conteiner_name: fastapi
+  # Проброс портов
+  ports:
+  - "8000:8000"
+  # Синхронизация файлов в контейнере и на хосте
+  volumes:
+    - ".:/usr/src/"
